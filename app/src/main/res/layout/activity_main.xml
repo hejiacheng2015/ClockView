@@ -7,7 +7,8 @@
 
     <TextView
         android:id="@+id/time"
-        android:text="2016-11-11"
+        android:visibility="gone"
+        android:text="2016-11-10"
         android:textSize="20dp"
         android:gravity="center_horizontal"
         android:textColor="@android:color/white"

@@ -6,27 +6,40 @@ import android.graphics.Color;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import com.clockview.swipebacklayout.SwipeBackLayout;
+import com.clockview.swipebacklayout.app.SwipeBackActivity;
+
 import java.util.Calendar;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends SwipeBackActivity {
     private int mYear;
     private int mMonth;
     private int mDay;
+    SwipeBackLayout mSwipeBackLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //隐藏标题栏
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        //隐藏标题栏
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
+        initSwipeBackActivity();
         initDisplay();
         initService();
         initDate();
+    }
+
+    public void initSwipeBackActivity(){
+        mSwipeBackLayout = getSwipeBackLayout();
+        mSwipeBackLayout.setEdgeSize(100);
+        mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
+        setSwipeBackEnable(true);
     }
 
     public void initDisplay(){
