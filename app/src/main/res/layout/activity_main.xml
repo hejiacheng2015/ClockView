@@ -10,4 +10,14 @@
         android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <TextView
+        android:text="Designed by HJC"
+        android:gravity="right"
+        android:layout_margin="10dp"
+        android:textSize="15dp"
+        android:layout_alignParentBottom="true"
+        android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </RelativeLayout>
